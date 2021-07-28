@@ -174,6 +174,18 @@ public class ParticleManager {
             case HALO:
                 particleControl.playHalo(loc, name);
                 break;
+            case RED_HALO:
+                particleControl.playRedHalo(loc, name);
+                break;
+            case ORANGE_HALO:
+                particleControl.playOrangeHalo(loc, name);
+                break;
+            case PURPLE_HALO:
+                particleControl.playPurpleHalo(loc, name);
+                break;
+            case GREEN_HALO:
+                particleControl.playGreenHalo(loc, name);
+                break;
             case SANTAHAT:
                 particleControl.playSantaHat(loc, name);
                 break;

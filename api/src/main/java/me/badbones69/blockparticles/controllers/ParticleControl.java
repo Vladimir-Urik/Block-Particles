@@ -64,6 +64,14 @@ public interface ParticleControl {
     void playSnowBlast(Location location, String id);
     
     void playHalo(Location location, String id);
+
+    void playRedHalo(Location location, String id);
+
+    void playOrangeHalo(Location location, String id);
+
+    void playPurpleHalo(Location location, String id);
+
+    void playGreenHalo(Location location, String id);
     
     void playSantaHat(Location location, String id);
     

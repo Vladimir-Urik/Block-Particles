@@ -198,6 +198,18 @@ public class Methods implements Listener {
                         case HALO:
                             bp.getParticleControl().playHalo(loc, id);
                             break;
+                        case RED_HALO:
+                            bp.getParticleControl().playRedHalo(loc, id);
+                            break;
+                        case ORANGE_HALO:
+                            bp.getParticleControl().playOrangeHalo(loc, id);
+                            break;
+                        case PURPLE_HALO:
+                            bp.getParticleControl().playPurpleHalo(loc, id);
+                            break;
+                        case GREEN_HALO:
+                            bp.getParticleControl().playGreenHalo(loc, id);
+                            break;
                         case MUSIC:
                             bp.getParticleControl().playMusic(loc, id);
                             break;

@@ -575,22 +575,22 @@ public class NMS_v1_12_Down implements ParticleControl {
                 if (noPlayers(l.clone(), range)) return;
                 try {
                     for (int i = 0; i < 3; i++) {
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.5, 0, 0), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, 0, .13), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, 0, .35), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, 0, .45), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, 0, .5), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, 0, .45), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, 0, .35), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, 0, .13), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.5, 0, 0), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, 0, -.13), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, 0, -.35), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, 0, -.45), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, 0, -.5), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, 0, -.45), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, 0, -.35), Color.fromRGB(255, 255, 0));
-                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, 0, -.13), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.5, -.2, 0), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, .13), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, .35), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, .45), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, .5), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, .45), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, .35), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, .13), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.5, -.2, 0), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, -.13), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, -.35), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, -.45), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, -.5), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, -.45), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, -.35), Color.fromRGB(255, 255, 0));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, -.13), Color.fromRGB(255, 255, 0));
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -598,7 +598,143 @@ public class NMS_v1_12_Down implements ParticleControl {
             }
         }, 0, 5));
     }
-    
+
+    @Override
+    public void playRedHalo(Location location, String id) {
+        locations.put(id, Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+            final Location l = location.add(.5, 1.3, .5);
+
+            @Override
+            public void run() {
+                if (noPlayers(l.clone(), range)) return;
+                try {
+                    for (int i = 0; i < 3; i++) {
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.5, -.2, 0), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, .13), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, .35), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, .45), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, .5), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, .45), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, .35), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, .13), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.5, -.2, 0), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, -.13), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, -.35), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, -.45), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, -.5), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, -.45), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, -.35), Color.fromRGB(219, 42, 21));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, -.13), Color.fromRGB(219, 42, 21));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 0, 5));
+    }
+
+    @Override
+    public void playOrangeHalo(Location location, String id) {
+        locations.put(id, Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+            final Location l = location.add(.5, 1.3, .5);
+
+            @Override
+            public void run() {
+                if (noPlayers(l.clone(), range)) return;
+                try {
+                    for (int i = 0; i < 3; i++) {
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.5, -.2, 0), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, .13), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, .35), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, .45), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, .5), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, .45), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, .35), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, .13), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.5, -.2, 0), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, -.13), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, -.35), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, -.45), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, -.5), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, -.45), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, -.35), Color.fromRGB(251, 92, 30));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, -.13), Color.fromRGB(251, 92, 30));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 0, 5));
+    }
+
+    @Override
+    public void playPurpleHalo(Location location, String id) {
+        locations.put(id, Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+            final Location l = location.add(.5, 1.3, .5);
+
+            @Override
+            public void run() {
+                if (noPlayers(l.clone(), range)) return;
+                try {
+                    for (int i = 0; i < 3; i++) {
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.5, -.2, 0), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, .13), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, .35), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, .45), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, .5), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, .45), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, .35), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, .13), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.5, -.2, 0), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, -.13), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, -.35), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, -.45), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, -.5), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, -.45), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, -.35), Color.fromRGB(202, 82, 202));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, -.13), Color.fromRGB(202, 82, 202));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 0, 5));
+    }
+
+    @Override
+    public void playGreenHalo(Location location, String id) {
+        locations.put(id, Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+            final Location l = location.add(.5, 1.3, .5);
+
+            @Override
+            public void run() {
+                if (noPlayers(l.clone(), range)) return;
+                try {
+                    for (int i = 0; i < 3; i++) {
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.5, -.2, 0), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, .13), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, .35), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, .45), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, .5), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, .45), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, .35), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, .13), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.5, -.2, 0), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.45, -.2, -.13), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.35, -.2, -.35), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(-.13, -.2, -.45), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(0, -.2, -.5), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.13, -.2, -.45), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.35, -.2, -.35), Color.fromRGB(76, 194, 46));
+                        ParticleEffects.REDSTONE.sendColor(Bukkit.getOnlinePlayers(), l.clone().add(.45, -.2, -.13), Color.fromRGB(76, 194, 46));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 0, 5));
+    }
+
     public void playSantaHat(final Location location, String id) {
         locations.put(id, Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
             final Location l1 = location.clone().add(.5, 1, .5);
